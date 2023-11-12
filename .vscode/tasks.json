@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+	  {
+		"label": "Print task shell info",
+		"type": "shell",
+		"command": "echo \"Path: $PATH \nShell: $SHELL\"",
+		"problemMatcher": []
+	  }
+	]
+  }
