@@ -1,0 +1,4 @@
+package adpter
+
+class Server {
+}
