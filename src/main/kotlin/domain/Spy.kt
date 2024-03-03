@@ -1,4 +1,4 @@
-package applikation
+package domain
 
 // Spy class
 class Spy(
@@ -6,4 +6,7 @@ class Spy(
     username: String
 ) : User(id, username) {
     // Additional properties and methods specific to spies can be added here
+    override fun displaRole() {
+        println("I am a Spy")
+    }
 }

@@ -1,10 +1,19 @@
-package applikation
+package domain
 
 // Player class
-data class Player(
-    val id: Int,
-    val username: String
+class Player(
+    id: Int,
+    username: String
 ) : User(
     id,
     username
-)
+){
+    override fun displaRole() {
+        println("I am a player")
+    }
+}
+
+
+
+
+

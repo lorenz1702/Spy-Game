@@ -1,7 +1,4 @@
-import applikation.ColumnDataType
-import applikation.Table
-import applikation.TableColumn
-import applikation.TableManager
+import applikation.*
 
 
 fun getGreeting(itemToGreet: String) {
@@ -12,12 +9,9 @@ fun getGreeting(itemToGreet: String) {
 
 
 fun main() {
-    val table1 = Table("Test","Penis")
-    val tablecolumn = TableColumn("Penis", ColumnDataType.TEXT)
-    table1.columns.add(tablecolumn)
-    val tablemanger = TableManager()
-    tablemanger.addNewRowToTable(table1)
-
+    val Game = InMemoryGameRepository()
+    val Player = Game.createPlayer(1)
+    println("test")
 }
 
 
