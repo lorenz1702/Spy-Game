@@ -1,4 +1,0 @@
-package applikation
-
-class DataAccessInterface {
-}

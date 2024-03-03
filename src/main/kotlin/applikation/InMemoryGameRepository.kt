@@ -1,0 +1,4 @@
+package applikation
+
+class InMemoryGameRepository {
+}
