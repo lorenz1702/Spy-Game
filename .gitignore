@@ -27,3 +27,74 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+# Gradle files
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# IntelliJ IDEA files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+
+.settings/
+
+# Ktor specific files
+ktor_server/.idea/
+ktor_server/.gradle/
+ktor_server/build/
+ktor_server/out/
+ktor_server/.DS_Store
+ktor_server/*.iml
+
+# Exclude compiled Kotlin files
+*.class
+
+# Exclude Maven specific files
+target/
+
+# Exclude generated Gradle files
+gradle-output/
+
+build
+.gradle
+.gradletasknamecache
+.idea/*
+!.idea/runConfigurations
+!.idea/runConfigurations/*
+!.idea/vcs.xml
+!.idea/dictionaries
+!.idea/dictionaries/*
+!.idea/copyright
+!.idea/copyright/*
+!.idea/codeStyles
+!.idea/codeStyles/*
+!.idea/icon.png
+out
+
+.vscode
+
+*.versionsBackup
+*.releaseBackup
+release.properties
+local.properties
+*.swp
+
+.video
+.attach_pid*
+apidoc
+
+
+
+.konan
+
+
+
+hs_err_pid*.log
+
+gradle-user-home
+
+.fleet

@@ -6,7 +6,7 @@ class Spy(
     username: String
 ) : User(id, username) {
     // Additional properties and methods specific to spies can be added here
-    override fun displaRole() {
+    override fun displayRole() {
         println("I am a Spy")
     }
 }

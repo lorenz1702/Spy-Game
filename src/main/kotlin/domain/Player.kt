@@ -8,7 +8,7 @@ class Player(
     id,
     username
 ){
-    override fun displaRole() {
+    override fun displayRole() {
         println("I am a player")
     }
 }

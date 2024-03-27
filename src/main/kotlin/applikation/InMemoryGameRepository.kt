@@ -29,10 +29,6 @@ class InMemoryGameRepository : GameRepository {
 
     // Implement methods from the GameRepository interface
 
-    override fun getAllWords(): Word {
-        TODO("Not yet implemented")
-    }
-
     override fun createPlayer(PlayerId: Int): Player {
         return Player(
             PlayerId,
@@ -48,21 +44,32 @@ class InMemoryGameRepository : GameRepository {
         return Word(WordId, Word)
     }
 
-
-    override fun getUserById(UserId: Int): User {
-        return spies.firstOrNull { it.id == UserId }
-            ?: throw IllegalArgumentException("Spy not found with id $UserId")
-    }
-
     override fun getAllUser(): List<User> {
         return users.toList()
     }
 
-    override fun getWordById(wordId: Int): Word {
-        TODO("Not yet implemented")
-    }
+
 
     override fun getRandomWord(): Word {
-        TODO("Not yet implemented")
+        if (words.isEmpty()) {
+            throw IllegalStateException("No words available")
+        }
+        return words.random()
+    }
+
+    override fun createUsers(numberOfSpies: Int, numberOfPlayers: Int) {
+        for (i in 1..numberOfSpies) {
+            createSpy(i)
+        }
+        for (i in 1..numberOfPlayers) {
+            createPlayer(i)
+        }
+    }
+
+    override fun userdisplaythereRole() {
+        users.forEach { user ->
+            println("${user.username}: ")
+            user.displayRole()
+        }
     }
 }

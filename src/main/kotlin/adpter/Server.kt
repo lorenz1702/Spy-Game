@@ -2,3 +2,4 @@ package adpter
 
 class Server {
 }
+

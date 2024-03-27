@@ -1,6 +1,7 @@
 import applikation.*
 
 
+
 fun getGreeting(itemToGreet: String) {
     val msg = "Hello $itemToGreet"
     println(msg)
