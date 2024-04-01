@@ -2,10 +2,9 @@ package domain
 
 // Spy class
 class Spy(
-    id: Int,
-    username: String
-) : User(id, username) {
-    // Additional properties and methods specific to spies can be added here
+    override val id: Int,
+    override var username: String
+) : User {
     override fun displayRole() {
         println("I am a Spy")
     }

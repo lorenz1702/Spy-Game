@@ -1,13 +1,11 @@
 package domain
 
-open class User (
-    val id: Int,
+interface User {
+    val id: Int
     var username: String
-){
-    open fun displayRole(){
-        println("I am a user")
-    }
+    fun displayRole()
 }
+
 
 interface DisplayRoleUseCase{
     fun displayRole(User: User)

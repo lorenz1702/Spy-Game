@@ -11,4 +11,6 @@ class Word (
 
 interface DisplayWordToPlayerUseCase{
     fun displayWordToPlayer(word:Word)
+
+    fun createWord(NewWord: String)
 }

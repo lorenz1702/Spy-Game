@@ -6,4 +6,8 @@ class DisplayWordToPlayerUseCaseImpl (
     override fun displayWordToPlayer(word: Word) {
 
     }
+
+    override fun createWord(NewWord: String) {
+
+    }
 }
