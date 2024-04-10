@@ -12,6 +12,12 @@ interface GameRepository {
 
     fun createSpy(SpyId: Int):Spy
 
+    fun LoadWords()
+
+    fun setWord(Word: Word)
+
+    fun getWord():Word?
+
     fun createWord(WordId: Int, Word: String):Word
 
     fun getRandomWord():Word

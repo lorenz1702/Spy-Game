@@ -21,9 +21,6 @@ fun getGreeting(itemToGreet: String) {
 
 
 fun main() {
-    val Game = InMemoryGameRepository()
-    val Player = Game.createPlayer(1)
-    println("test")
 
     embeddedServer(Netty, port = 8080, host = "0.0.0.0", module = Application::module)
         .start(wait = true)

@@ -1,0 +1,6 @@
+package adpter
+
+class BackendServices {
+
+}
+

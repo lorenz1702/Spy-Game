@@ -1,5 +1,0 @@
-package adpter
-
-class Server {
-}
-

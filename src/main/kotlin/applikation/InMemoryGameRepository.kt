@@ -11,6 +11,8 @@ class InMemoryGameRepository : GameRepository {
     private var word: Word? = null
 
     // Add players to the repository
+
+
     fun addPlayer(player: Player) {
         players.add(player)
         users.add(player)
@@ -23,9 +25,14 @@ class InMemoryGameRepository : GameRepository {
     }
 
     // Set the secret word
-    fun setWord(word: Word) {
+    override fun setWord(word: Word) {
         this.word = word
     }
+
+    override fun getWord(): Word? {
+        return this.word
+    }
+
 
     // Implement methods from the GameRepository interface
 
@@ -40,7 +47,28 @@ class InMemoryGameRepository : GameRepository {
         return Spy(SpyId,"Spy $SpyId")
     }
 
+    override fun LoadWords() {
+        val geographicZones = arrayOf(
+            "Arctic",
+            "Antarctic",
+            "Tundra",
+            "Taiga",
+            "Temperate Forest",
+            "Tropical Rainforest",
+            "Grassland",
+            "Desert",
+            "Savanna",
+            "Mediterranean"
+        )
+
+        words.clear() // Clear existing words
+        for ((index, zone) in geographicZones.withIndex()) {
+            words.add(createWord(index + 1, zone))
+        }
+    }
+
     override fun createWord(WordId: Int, Word: String): Word {
+
         return Word(WordId, Word)
     }
 
