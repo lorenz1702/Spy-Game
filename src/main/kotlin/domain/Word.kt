@@ -1,9 +1,11 @@
 package domain
 
 class Word (
-    id: Int,
+    val id: Int,
     val name: String
 ){
+
+
     fun displayToPlayer(player: Player){
         println("The word is: $name")
     }

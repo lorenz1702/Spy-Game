@@ -87,10 +87,11 @@ class InMemoryGameRepository : GameRepository {
 
     override fun createUsers(numberOfSpies: Int, numberOfPlayers: Int) {
         for (i in 1..numberOfSpies) {
-            createSpy(i)
+            this.addSpy(createSpy(i))
+
         }
         for (i in 1..numberOfPlayers) {
-            createPlayer(i)
+            this.addPlayer(createPlayer(i))
         }
     }
 
