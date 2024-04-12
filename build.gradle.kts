@@ -46,6 +46,7 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test:$kotlin_version")
     testImplementation(kotlin("test"))
     testImplementation("org.mockito.kotlin:mockito-kotlin:3.1.0")
+    testImplementation("org.mockito:mockito-core:5.11.0")
 
 
 

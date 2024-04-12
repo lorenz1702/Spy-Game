@@ -7,7 +7,7 @@ class InMemoryGameRepository : GameRepository {
     private val users = mutableListOf<User>()
     private val players = mutableListOf<Player>()
     private val spies = mutableListOf<Spy>()
-    private val words = mutableListOf<Word>()
+    private var words = mutableListOf<Word>()
     private var word: Word? = null
 
     // Add players to the repository
@@ -25,8 +25,8 @@ class InMemoryGameRepository : GameRepository {
     }
 
     // Set the secret word
-    override fun setWord(word: Word) {
-        this.word = word
+    override fun setWord(theword: Word) {
+        this.word = theword
     }
 
     override fun getWord(): Word? {
@@ -47,6 +47,9 @@ class InMemoryGameRepository : GameRepository {
         return Spy(SpyId,"Spy $SpyId")
     }
 
+    fun getAllWords(): MutableList<Word> {
+        return this.words
+    }
     override fun LoadWords() {
         val geographicZones = arrayOf(
             "Arctic",

@@ -4,9 +4,9 @@ import domain.Player
 import domain.User
 
 class ImpCoreFunktions(private var Game:GameRepository) : CoreFunktions {
-    private var NumberOfUsers :Int = 0
-    private var NumberOfSpys :Int = 0
-    private var users = mutableListOf<User>()
+    var NumberOfUsers :Int = 0
+    var NumberOfSpys :Int = 0
+    var users = mutableListOf<User>()
 
     override fun NumberOfUsers(UserNumber: Int) {
         this.NumberOfUsers = UserNumber
@@ -31,7 +31,7 @@ class ImpCoreFunktions(private var Game:GameRepository) : CoreFunktions {
     }
 
     override fun DisplayOneRole() {
-        fun displayOneRole(users: MutableList<User>) {
+
             if (users.isEmpty()) {
                 println("No more users left.")
                 return
@@ -43,10 +43,10 @@ class ImpCoreFunktions(private var Game:GameRepository) : CoreFunktions {
             println("${randomUser.username}:")
             randomUser.displayRole()
             if (randomUser is Player) {
-                 println("Word: ${Game.getWord()}")  // Print the word if the user is a player and not a spy
+                 println("Word: ${Game.getWord()?.name}")  // Print the word if the user is a player and not a spy
             }
-        }
     }
+
 
     override fun EndGame() {
         Game.userdisplaythereRole()

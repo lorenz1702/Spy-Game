@@ -77,7 +77,7 @@ class InMemoryGameRepositoryTest {
         game.LoadWords()
 
         // Assert
-        assertEquals(geographicZones.size, words.size)
+        assertEquals(geographicZones.size, game.getAllWords().size)
         for ((index, word) in words.withIndex()) {
             assertEquals(index + 1, word.id)
             assertEquals(geographicZones[index], word.name)
@@ -131,6 +131,7 @@ class InMemoryGameRepositoryTest {
 
         // Act
         val game = InMemoryGameRepository()
+        game.LoadWords()
         val randomWord = game.getRandomWord()
 
         // Assert
@@ -143,9 +144,9 @@ class InMemoryGameRepositoryTest {
     fun createUsers() {
         // Arrange
         val users = listOf(
-            Player(1, "Player 1"),
-            Player(2, "Player 2"),
-            Spy(3, "Spy 1")
+            Player(1, "Spy 1"),
+            Player(2, "Player 1"),
+            Spy(3, "Player 2")
         )
         val game = InMemoryGameRepository()
         game.createUsers(1,2)
