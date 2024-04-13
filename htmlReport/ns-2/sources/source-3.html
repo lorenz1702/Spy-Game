@@ -1,0 +1,171 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > ImpCoreFunktions</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">applikation</a>
+</div>
+
+<h1>Coverage Summary for Class: ImpCoreFunktions (applikation)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ImpCoreFunktions</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (8/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (4/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    89,3%
+  </span>
+  <span class="absValue">
+    (25/28)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package applikation
+&nbsp;
+&nbsp;import domain.Player
+&nbsp;import domain.User
+&nbsp;
+<b class="fc">&nbsp;class ImpCoreFunktions(private var Game:GameRepository) : CoreFunktions {</b>
+<b class="fc">&nbsp;    var NumberOfUsers :Int = 0</b>
+<b class="fc">&nbsp;    var NumberOfSpys :Int = 0</b>
+<b class="fc">&nbsp;    var users = mutableListOf&lt;User&gt;()</b>
+&nbsp;
+&nbsp;    override fun NumberOfUsers(UserNumber: Int) {
+<b class="fc">&nbsp;        this.NumberOfUsers = UserNumber</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    override fun NumberOfSpys(SpyNumber: Int) {
+<b class="pc">&nbsp;        if (this.NumberOfUsers &lt;= SpyNumber) {</b>
+<b class="nc">&nbsp;            throw IllegalArgumentException(&quot;SpyNumber is not greater than the Number of Users or the User Number is not set&quot;)</b>
+&nbsp;        } else {
+<b class="fc">&nbsp;            this.NumberOfSpys = SpyNumber</b>
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    override fun StartGame() {
+<b class="fc">&nbsp;        val NumberOfPlayers = this.NumberOfUsers-this.NumberOfSpys</b>
+<b class="fc">&nbsp;        Game.createUsers(this.NumberOfSpys, NumberOfPlayers)</b>
+<b class="fc">&nbsp;        Game.LoadWords()</b>
+<b class="fc">&nbsp;        Game.setWord(Game.getRandomWord())</b>
+<b class="fc">&nbsp;        this.users = Game.getAllUser().toMutableList()</b>
+&nbsp;
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    override fun DisplayOneRole() {
+&nbsp;
+<b class="pc">&nbsp;            if (users.isEmpty()) {</b>
+<b class="nc">&nbsp;                println(&quot;No more users left.&quot;)</b>
+<b class="nc">&nbsp;                return</b>
+&nbsp;            }
+&nbsp;
+<b class="fc">&nbsp;            val randomIndex = (0 until users.size).random()</b>
+<b class="fc">&nbsp;            val randomUser = users.removeAt(randomIndex)</b>
+&nbsp;
+<b class="fc">&nbsp;            println(&quot;${randomUser.username}:&quot;)</b>
+<b class="fc">&nbsp;            randomUser.displayRole()</b>
+<b class="pc">&nbsp;            if (randomUser is Player) {</b>
+<b class="pc">&nbsp;                 println(&quot;Word: ${Game.getWord()?.name}&quot;)  // Print the word if the user is a player and not a spy</b>
+&nbsp;            }
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;
+&nbsp;    override fun EndGame() {
+<b class="fc">&nbsp;        Game.userdisplaythereRole()</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-04-12 18:43</div>
+</div>
+</body>
+</html>

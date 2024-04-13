@@ -1,0 +1,137 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > MainKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example</a>
+</div>
+
+<h1>Coverage Summary for Class: MainKt (com.example)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">MainKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/7)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;import com.example.plugins.configureDatabases
+&nbsp;import com.example.plugins.configureRouting
+&nbsp;import com.example.plugins.configureSerialization
+&nbsp;import io.ktor.server.application.*
+&nbsp;import io.ktor.server.engine.*
+&nbsp;import io.ktor.server.netty.*
+&nbsp;
+&nbsp;import applikation.*
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;fun getGreeting(itemToGreet: String) {
+<b class="nc">&nbsp;    val msg = &quot;Hello $itemToGreet&quot;</b>
+<b class="nc">&nbsp;    println(msg)</b>
+&nbsp;}
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;fun main() {
+&nbsp;
+<b class="nc">&nbsp;    embeddedServer(Netty, port = 8080, host = &quot;0.0.0.0&quot;, module = Application::module)</b>
+<b class="nc">&nbsp;        .start(wait = true)</b>
+&nbsp;}
+&nbsp;
+&nbsp;fun Application.module() {
+<b class="nc">&nbsp;    configureSerialization()</b>
+<b class="nc">&nbsp;    configureDatabases()</b>
+<b class="nc">&nbsp;    configureRouting()</b>
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-04-12 18:43</div>
+</div>
+</body>
+</html>

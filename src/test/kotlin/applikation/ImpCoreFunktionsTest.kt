@@ -80,23 +80,14 @@ class ImpCoreFunktionsTest {
 
         impCoreFunktions.users = usersList.toMutableList()
 
-
         // Mocking gameRepository to return a word
         `when`(gameRepository.getWord()).thenReturn(Word(1,"TestWord"))
-
-
 
         // Act
         impCoreFunktions.DisplayOneRole()
 
         // Assert
-        // Verify println statements using Mockito verify
-
-
-        // Verify that the removed user is not in usersList anymore
-        // Assert
         assertEquals(usersList.size - 1, impCoreFunktions.users.size)
-
     }
 
 
