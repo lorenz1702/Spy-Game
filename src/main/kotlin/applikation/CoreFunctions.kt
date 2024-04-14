@@ -1,9 +1,6 @@
 package applikation
 
-import domain.Player
-import domain.Spy
-
-interface CoreFunktions {
+interface CoreFunctions {
     fun NumberOfUsers(UserNumber: Int)
 
     fun NumberOfSpys(SpyNumber:Int)

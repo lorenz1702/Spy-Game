@@ -7,8 +7,8 @@ import applikation.*
 
 fun Application.configureRouting() {
     routing {
-        val GameRepository  = InMemoryGameRepository()
-        val CoreFunktions = ImpCoreFunktions(GameRepository)
+
+        val CoreFunktions = ImpCoreFunctions()
 
         // Define routes to call backend functions
 

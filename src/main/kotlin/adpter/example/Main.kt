@@ -22,6 +22,15 @@ fun getGreeting(itemToGreet: String) {
 
 fun main() {
 
+    val game = ImpCoreFunctions()
+    game.NumberOfUsers(5)
+    println("Helloworld")
+    game.NumberOfSpys(2)
+    game.StartGame()
+    game.DisplayOneRole()
+    game.EndGame()
+
+
     embeddedServer(Netty, port = 8080, host = "0.0.0.0", module = Application::module)
         .start(wait = true)
 }
