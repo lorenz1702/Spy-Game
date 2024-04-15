@@ -10,17 +10,21 @@ class GameLogic(private val wordRepository: WordRepository, private val dataRepo
         this.users = dataRepository.getAllUsers().toMutableList()
     }
 
-    fun displayOneRole(){
+    fun displayOneRole() {
         if (users.isEmpty()) { return }
-        val randomIndex = (0..<users.size).random()
-        val randomUser = users.removeAt(randomIndex)
 
-        println("${randomUser.username}:")
+        val randomUser = userRepository.selctRandomUser(users)
+        users.remove(randomUser)
         randomUser.displayRole()
         if (randomUser is Player) {
-            println("Word: ${dataRepository.getWord()?.name}")  // Print the word if the user is a player and not a spy
+            printPlayerWord(randomUser)
         }
     }
+
+    private fun printPlayerWord(player: Player) {
+        println("Word: ${dataRepository.getWord()?.name}")
+    }
+
 
     fun endGame(){
         userRepository.displayAllUserRoles(dataRepository.getAllUsers().toMutableList())

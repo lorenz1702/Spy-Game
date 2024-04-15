@@ -35,4 +35,9 @@ class ImpUserRepository : UserRepository{
             user.displayRole()
         }
     }
+
+    override fun selctRandomUser(userList: MutableList<User>): User {
+        val randomIndex = (0..<userList.size).random()
+        return userList.removeAt(randomIndex)
+    }
 }
