@@ -1,8 +1,9 @@
-package applikation
+package plugin
 
+import applikation.DataRepository
 import domain.*
 
-class ImpDataRepository :DataRepository  {
+class ImpDataRepository : DataRepository {
     private var users = mutableListOf<User>()
 
     private var words = mutableListOf<Word>()

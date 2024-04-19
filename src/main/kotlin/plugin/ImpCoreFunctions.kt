@@ -1,9 +1,10 @@
-package applikation
+package plugin
 
-import domain.*
+import applikation.CoreFunctions
+import applikation.GameLogic
 
-class ImpCoreFunctions:CoreFunctions {
-    val game = GameLogic(ImpWordRepository(),ImpDataRepository(),ImpUserRepository())
+class ImpCoreFunctions: CoreFunctions {
+    val game = GameLogic(ImpWordRepository(), ImpDataRepository(), ImpUserRepository())
     var NumberOfUsers :Int = 0
     var NumberOfSpies :Int = 0
 

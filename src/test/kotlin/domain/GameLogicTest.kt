@@ -1,13 +1,15 @@
 package domain
 
 
+import applikation.DataRepository
+import applikation.GameLogic
+import applikation.UserRepository
+import applikation.WordRepository
 import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.BeforeEach
 
 import kotlin.test.assertEquals
-import kotlin.test.assertTrue
-import org.junit.jupiter.api.Assertions.*
 import org.mockito.Mockito.*
 
 class GameLogicTest {

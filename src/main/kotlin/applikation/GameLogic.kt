@@ -1,4 +1,7 @@
-package domain
+package applikation
+
+import domain.Player
+import domain.User
 
 class GameLogic(private val wordRepository: WordRepository, private val dataRepository: DataRepository, private val userRepository: UserRepository) {
     var users = mutableListOf<User>()
@@ -30,15 +33,15 @@ class GameLogic(private val wordRepository: WordRepository, private val dataRepo
         userRepository.displayAllUserRoles(dataRepository.getAllUsers().toMutableList())
     }
 
-    fun getDataRepository(): DataRepository{
+    fun getDataRepository(): DataRepository {
         return dataRepository
     }
 
-    fun getUserRepository(): UserRepository{
+    fun getUserRepository(): UserRepository {
         return userRepository
     }
 
-    fun getWordRepository(): WordRepository{
+    fun getWordRepository(): WordRepository {
         return wordRepository
     }
 }

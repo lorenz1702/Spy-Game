@@ -1,12 +1,12 @@
-package applikation
+package plugin
 
 import domain.Player
 import domain.Spy
 import domain.User
-import domain.UserRepository
+import applikation.UserRepository
 
 
-class ImpUserRepository : UserRepository{
+class ImpUserRepository : UserRepository {
     override fun createSpy(spyId: Int): Spy {
         return Spy(spyId,"Spy $spyId")
     }

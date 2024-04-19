@@ -1,4 +1,0 @@
-package plugin
-
-class ComandlineController {
-}

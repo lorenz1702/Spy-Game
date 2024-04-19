@@ -1,4 +1,6 @@
-package domain
+package applikation
+
+import domain.Word
 
 interface WordRepository {
     fun loadWords():List<Word>

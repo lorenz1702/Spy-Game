@@ -1,10 +1,9 @@
-package applikation
+package plugin
 
-import domain.User
 import domain.Word
-import domain.WordRepository
+import applikation.WordRepository
 
-class ImpWordRepository : WordRepository{
+class ImpWordRepository : WordRepository {
     override fun loadWords(): List<Word> {
         val words = mutableListOf<Word>()
         val geographicZones = arrayOf(
@@ -26,7 +25,6 @@ class ImpWordRepository : WordRepository{
         }
         return words
     }
-
 
     override fun createWord(wordId: Int, word: String): Word {
         return Word(wordId, word)

@@ -3,7 +3,7 @@ package com.example.plugins
 import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
-import applikation.*
+import plugin.ImpCoreFunctions
 
 fun Application.configureRouting() {
     routing {
@@ -36,7 +36,7 @@ fun Application.configureRouting() {
 
         // Route to start the CoreFunktions
         get("/startGame") {
-            CoreFunktions.StartGame()
+            call.respond(CoreFunktions.StartGame())
             call.respond("Game started.")
         }
 

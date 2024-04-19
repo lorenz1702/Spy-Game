@@ -1,4 +1,7 @@
-package domain
+package applikation
+
+import domain.User
+import domain.Word
 
 interface DataRepository {
     fun getAllUsers(): List<User>

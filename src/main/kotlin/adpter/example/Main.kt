@@ -9,8 +9,7 @@ import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 
-import applikation.*
-
+import plugin.ImpCoreFunctions
 
 
 fun getGreeting(itemToGreet: String) {
