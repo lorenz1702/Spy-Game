@@ -26,6 +26,10 @@ class ImpDataRepository : DataRepository {
         this.word = word
     }
 
+    override fun setWords(wordList: List<Word>) {
+        this.words = wordList.toMutableList()
+    }
+
     override fun setUser(createUsers: List<User>) {
         users = createUsers.toMutableList()
     }

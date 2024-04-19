@@ -6,10 +6,20 @@ import domain.User
 class GameLogic(private val wordRepository: WordRepository, private val dataRepository: DataRepository, private val userRepository: UserRepository) {
     var users = mutableListOf<User>()
 
+
+    fun choseCategories(chosenCategories:Boolean){
+        if (chosenCategories){
+            dataRepository.setWords(wordRepository.loadKlimacticWords())
+            return
+        }
+
+        dataRepository.setWords(wordRepository.loadSportWords())
+    }
+
     fun initializeGame(numberofSpies:Int, numberofUsers:Int){
         val numberofPlayers = numberofUsers-numberofSpies
         dataRepository.setUser(userRepository.createUsers(numberofSpies, numberofPlayers))
-        dataRepository.setWord(wordRepository.getRandomWord(wordRepository.loadWords()))
+        dataRepository.setWord(wordRepository.getRandomWord(dataRepository.getAllWords()))
         this.users = dataRepository.getAllUsers().toMutableList()
     }
 

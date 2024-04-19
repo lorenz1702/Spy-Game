@@ -4,7 +4,9 @@ import domain.Word
 import applikation.WordRepository
 
 class ImpWordRepository : WordRepository {
-    override fun loadWords(): List<Word> {
+
+
+    override fun loadKlimacticWords(): List<Word> {
         val words = mutableListOf<Word>()
         val geographicZones = arrayOf(
             "Arctic",
@@ -21,6 +23,37 @@ class ImpWordRepository : WordRepository {
 
         words.clear() // Clear existing words
         for ((index, zone) in geographicZones.withIndex()) {
+            words.add(createWord(index + 1, zone))
+        }
+        return words
+    }
+
+    override fun loadSportWords(): List<Word> {
+        val words = mutableListOf<Word>()
+        val sportWords = arrayOf(
+            "Fußball",
+            "Basketball",
+            "Tennis",
+            "Volleyball",
+            "Schwimmen",
+            "Laufen",
+            "Leichtathletik",
+            "Boxen",
+            "Handball",
+            "Rugby",
+            "Golf",
+            "Hockey",
+            "Tischtennis",
+            "Badminton",
+            "Radfahren",
+            "Skifahren",
+            "Snowboarden",
+            "Klettern",
+            "Tauchen",
+            "Yoga"
+        )
+        words.clear() // Clear existing words
+        for ((index, zone) in sportWords.withIndex()) {
             words.add(createWord(index + 1, zone))
         }
         return words
