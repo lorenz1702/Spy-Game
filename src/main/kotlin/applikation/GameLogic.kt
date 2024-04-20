@@ -2,6 +2,8 @@ package applikation
 
 import domain.Player
 import domain.User
+import plugin.KlimacticWordRepository
+import plugin.SportWordRepository
 
 class GameLogic(private val wordRepository: WordRepository, private val dataRepository: DataRepository, private val userRepository: UserRepository) {
     var users = mutableListOf<User>()
@@ -9,11 +11,11 @@ class GameLogic(private val wordRepository: WordRepository, private val dataRepo
 
     fun choseCategories(chosenCategories:Boolean){
         if (chosenCategories){
-            dataRepository.setWords(wordRepository.loadKlimacticWords())
+            dataRepository.setWords(SportWordRepository().loadWords())
             return
         }
 
-        dataRepository.setWords(wordRepository.loadSportWords())
+        dataRepository.setWords(KlimacticWordRepository().loadWords())
     }
 
     fun initializeGame(numberofSpies:Int, numberofUsers:Int){
