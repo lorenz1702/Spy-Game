@@ -4,7 +4,7 @@ import applikation.CoreFunctions
 import applikation.GameLogic
 
 class ImpCoreFunctions: CoreFunctions {
-    val game = GameLogic(ImpWordRepository(), ImpDataRepository(), ImpUserRepository())
+    val game = GameLogic(SportWordRepository(), ImpDataRepository(), ImpUserRepository())
     var NumberOfUsers :Int = 0
     var NumberOfSpies :Int = 0
 
@@ -20,6 +20,14 @@ class ImpCoreFunctions: CoreFunctions {
         }
     }
 
+    override fun getCategory(): List<String> {
+        TODO("Not yet implemented")
+    }
+
+    override fun setCategories(chosenCategories: List<Boolean>) {
+        TODO("Not yet implemented")
+    }
+
     override fun StartGame() {
 
         this.game.initializeGame(this.NumberOfSpies,this.NumberOfUsers)
@@ -27,6 +35,10 @@ class ImpCoreFunctions: CoreFunctions {
 
     override fun DisplayOneRole() {
         this.game.displayOneRole()
+    }
+
+    override fun StartTimer() {
+        TODO("Not yet implemented")
     }
 
     override fun EndGame() {

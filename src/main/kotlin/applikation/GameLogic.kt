@@ -1,22 +1,22 @@
 package applikation
 
-import domain.Player
-import domain.User
-import plugin.KlimacticWordRepository
-import plugin.SportWordRepository
+    import domain.Player
+    import domain.User
+    import plugin.KlimacticWordRepository
+    import plugin.SportWordRepository
 
-class GameLogic(private val wordRepository: WordRepository, private val dataRepository: DataRepository, private val userRepository: UserRepository) {
-    var users = mutableListOf<User>()
+    class GameLogic(private val wordRepository: WordRepository, private val dataRepository: DataRepository, private val userRepository: UserRepository) {
+        var users = mutableListOf<User>()
 
 
-    fun choseCategories(chosenCategories:Boolean){
-        if (chosenCategories){
-            dataRepository.setWords(SportWordRepository().loadWords())
-            return
+        fun choseCategories(chosenCategories:Boolean){
+            if (chosenCategories){
+                dataRepository.setWords(SportWordRepository().loadWords())
+                return
+            }
+
+            dataRepository.setWords(KlimacticWordRepository().loadWords())
         }
-
-        dataRepository.setWords(KlimacticWordRepository().loadWords())
-    }
 
     fun initializeGame(numberofSpies:Int, numberofUsers:Int){
         val numberofPlayers = numberofUsers-numberofSpies
