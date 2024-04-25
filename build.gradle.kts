@@ -17,7 +17,7 @@ plugins {
 }
 
 application {
-    mainClass.set("src.main.kotlin.adpter.example.Main.kt")
+    mainClass.set("com.example.MainKt")
 }
 
 group = "com.example"
