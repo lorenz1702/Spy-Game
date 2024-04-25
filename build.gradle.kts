@@ -12,6 +12,12 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization") version "1.9.22"
     id("java")
     jacoco
+    id("com.github.johnrengelman.shadow") version "7.1.0"
+
+}
+
+application {
+    mainClass.set("src.main.kotlin.adpter.example.Main.kt")
 }
 
 group = "com.example"
@@ -65,5 +71,16 @@ tasks.test {
 }
 tasks.jacocoTestReport {
     dependsOn(tasks.test) // tests are required to run before generating the report
+}
+
+
+tasks {
+    shadowJar {
+        archiveFileName = "SpyGame.jar"
+        manifest {
+            attributes["Main-Class"] = "com.example.MainKt" // Die Superclasses deiner Anwendung
+        }
+    }
+
 }
 
